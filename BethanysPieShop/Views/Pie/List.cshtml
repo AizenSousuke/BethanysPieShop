@@ -7,16 +7,17 @@
 @model PiesListViewModel
 
 <h1>
-    @Model.CurrentCategory
+    Category: @Model.CurrentCategory
 </h1>
 @foreach (var pie in Model.Pies)
 {
     <div class="card">
         <div class="card-body">
+            <img class="card-img" src="@pie.ImageUrl" />
             <h2 class="card-title">@pie.Name</h2>
-            <h3 class="card-subtitle">@pie.Price.ToString("c")</h3>
+            <h3 class="card-subtitle text-muted">@pie.Price.ToString("c")</h3>
             <h4 class="card-text">@pie.Category.CategoryName</h4>
-            <button class="btn btn-primary">View Cake</button>
+            <button class="btn">View Cake</button>
         </div>
     </div>
 }
