@@ -4,19 +4,19 @@
 @{
 }
 
-@model BethanysPieShop.ViewModels.PiesListViewModel
-<html>
-    <body>
-        <h1>
-            @Model.CurrentCategory
-        </h1>
-        @foreach (var pie in Model.Pies)
-        {
-            <div>
-                <h2>@pie.Name</h2>
-                <h3>@pie.Price.ToString("c")</h3>
-                <h4>@pie.Category.CategoryName</h4>
-            </div>
-        }
-    </body>
-</html>
+@model PiesListViewModel
+
+<h1>
+    @Model.CurrentCategory
+</h1>
+@foreach (var pie in Model.Pies)
+{
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">@pie.Name</h2>
+            <h3 class="card-subtitle">@pie.Price.ToString("c")</h3>
+            <h4 class="card-text">@pie.Category.CategoryName</h4>
+            <button class="btn btn-primary">View Cake</button>
+        </div>
+    </div>
+}
