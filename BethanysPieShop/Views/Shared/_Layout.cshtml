@@ -12,8 +12,19 @@
     <link href="~/Content/site.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="container-fluid">
-        @RenderBody()
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <p class="lead">
+                    <img class="img-fluid" alt="Bethany's Pie Shop'" src="~/Images/bethanylogo.png" />
+                </p>
+            </div>
+            <div class="col-sm-9">
+                @RenderBody()
+            </div>
+        </div>
+        <div class="row">
+        </div>
     </div>
 </body>
 </html>

@@ -11,13 +11,16 @@
 </h1>
 @foreach (var pie in Model.Pies)
 {
-    <div class="card">
-        <div class="card-body">
-            <img class="card-img" src="@pie.ImageUrl" />
-            <h2 class="card-title">@pie.Name</h2>
-            <h3 class="card-subtitle text-muted">@pie.Price.ToString("c")</h3>
-            <h4 class="card-text">@pie.Category.CategoryName</h4>
-            <button class="btn">View Cake</button>
+    <div class="col-sm-12 col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <img class="card-img" src="@pie.ImageThumbnailUrl" alt="" />
+                <h2 class="card-title">@pie.Name</h2>
+                <h3 class="card-subtitle text-muted">@pie.Price.ToString("c")</h3>
+                <h6 class="card-text text-capitalize text-danger">@pie.Category.CategoryName</h6>
+                <p class="card-body">@pie.ShortDescription</p>
+                <button class="btn btn-primary float-right">View Cake</button>
+            </div>
         </div>
     </div>
 }
