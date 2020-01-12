@@ -31,10 +31,16 @@ namespace BethanysPieShop
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            /*
             // register services here 
             services.AddScoped<IPieRepository, MockPieRepository>();
             services.AddScoped<ICategoryRepository, MockCategoryRepository>();
-            
+            */
+
+            // Using real db now
+            services.AddScoped<IPieRepository, PieRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+
             // register framework services
             services.AddControllersWithViews();
         }
