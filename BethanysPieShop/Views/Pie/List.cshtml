@@ -9,6 +9,7 @@
 <h1>
     Category: @Model.CurrentCategory
 </h1>
+
 <div class="row">
     @foreach (var pie in Model.Pies)
     {
@@ -20,7 +21,7 @@
                     <h3 class="card-subtitle text-muted">@pie.Price.ToString("c")</h3>
                     <h6 class="card-text text-capitalize text-danger">@pie.Category.CategoryName</h6>
                     <p class="card-body">@pie.ShortDescription</p>
-                    <button class="btn btn-primary float-right">View Cake</button>
+                    <a class="btn btn-primary float-right" asp-controller="Pie" asp-action="Details" asp-route-id="@pie.PieId">View Cake</a>
                 </div>
             </div>
         </div>

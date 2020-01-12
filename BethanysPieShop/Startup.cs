@@ -57,6 +57,7 @@ namespace BethanysPieShop
 
             app.UseStaticFiles();
 
+            // Routing
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
