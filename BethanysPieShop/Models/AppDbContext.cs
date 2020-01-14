@@ -12,8 +12,11 @@ namespace BethanysPieShop.Models
         {
 
         }
+
+        // Database Table to manage
         public DbSet<Pie> Pies { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
 
         // Create data if null
         protected override void OnModelCreating(ModelBuilder modelBuilder)
