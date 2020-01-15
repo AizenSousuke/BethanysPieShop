@@ -14,13 +14,13 @@
 <body>
     <div class="container">
 
-        <nav class="navbar navbar-dark bg-dark navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-dark bg-dark fixed-top" role="navigation">
             <div class="container">
-                <div class="navbar-header d-flex">
-                    <button type="button" class="navbar-toggler p-2" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <div class="navbar-header">
+                    <button class="navbar-toggler flex-grow-1" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="btn btn-primary ml-auto p-2" asp-controller="ShoppingCart" asp-action="Index">
+                    <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="Index">
                         Shopping Cart
                     </a>
                 </div>
