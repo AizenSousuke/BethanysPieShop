@@ -7,20 +7,20 @@
 @model Pie
 
 <div class="col-sm-12 col-md-6 col-lg-4">
-    <div class="card">
+    <div class="card h-100">
         <div class="card-body">
             <img class="card-img" src="@Model.ImageThumbnailUrl" alt="" />
             <h2 class="card-title">@Model.Name</h2>
             <h3 class="card-subtitle text-muted">@Model.Price.ToString("c")</h3>
             <h6 class="card-text text-capitalize text-danger">@Model.Category.CategoryName</h6>
             <p class="card-body">@Model.ShortDescription</p>
-            <div class="row">
-                <a class="btn btn-primary col-6" asp-controller="Pie" asp-action="Details" asp-route-id="@Model.PieId">Details</a>
-                <a class="btn btn-primary col-6"
-                   asp-controller="ShoppingCart"
-                   asp-action="AddToShoppingCart"
-                   asp-route-pieId="@Model.PieId">Add to cart</a>
-            </div>
+        </div>
+        <div class="row card-footer">
+            <a class="btn btn-primary col-6" asp-controller="Pie" asp-action="Details" asp-route-id="@Model.PieId">Details</a>
+            <a class="btn btn-success col-6"
+                asp-controller="ShoppingCart"
+                asp-action="AddToShoppingCart"
+                asp-route-pieId="@Model.PieId">Add to cart</a>
         </div>
     </div>
 </div>
