@@ -14,11 +14,13 @@
             <h3 class="card-subtitle text-muted">@Model.Price.ToString("c")</h3>
             <h6 class="card-text text-capitalize text-danger">@Model.Category.CategoryName</h6>
             <p class="card-body">@Model.ShortDescription</p>
-            <a class="btn btn-primary float-right" asp-controller="Pie" asp-action="Details" asp-route-id="@Model.PieId">Details</a>
-            <a class="btn btn-primary"
-               asp-controller="ShoppingCart"
-               asp-action="AddToShoppingCart"
-               asp-route-pieId="@Model.PieId">Add to cart</a>
+            <div class="row">
+                <a class="btn btn-primary col-6" asp-controller="Pie" asp-action="Details" asp-route-id="@Model.PieId">Details</a>
+                <a class="btn btn-primary col-6"
+                   asp-controller="ShoppingCart"
+                   asp-action="AddToShoppingCart"
+                   asp-route-pieId="@Model.PieId">Add to cart</a>
+            </div>
         </div>
     </div>
 </div>

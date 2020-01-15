@@ -10,6 +10,8 @@
     <script src="~/lib/jquery/jquery.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.js"></script>
     <link href="~/Content/site.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/9782bb68c9.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <div class="container">
@@ -20,14 +22,20 @@
                     <button class="navbar-toggler flex-grow-1" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="Index">
+                    <!--<a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="Index">
                         Shopping Cart
+                    </a>-->
+                </div>
+                <div>
+                    <a asp-controller="ShoppingCart" asp-action="Index">
+                        <!-- Invoke the View Component -->
+                        @await Component.InvokeAsync("ShoppingCartSummary")
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-controller="Pie" asp-action="List">Pies</a></li>
+                        <li class="p-2"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="p-2"><a asp-controller="Pie" asp-action="List">Pies</a></li>
                     </ul>
                 </div>
             </div>
