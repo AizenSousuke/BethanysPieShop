@@ -1,7 +1,13 @@
 ﻿@model ShoppingCartViewModel
 
-<span class="fas fa-shopping-cart text-primary"> Items in shopping cart:</span>
+<span class="fas fa-shopping-cart"></span> <span class="text-primary">Items in shopping cart:</span>
 @if (Model.ShoppingCart.ShoppingCartItems.Count > 0)
+{
+    <span id="cart-status" class="text-info">
+        @Model.ShoppingCart.ShoppingCartItems.Count
+    </span>
+}
+else
 {
     <span id="cart-status" class="text-light">
         @Model.ShoppingCart.ShoppingCartItems.Count

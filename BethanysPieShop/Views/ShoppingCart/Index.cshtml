@@ -6,13 +6,10 @@
 
 @model ShoppingCartViewModel
 
-<div>
-    <a class="btn btn-primary" asp-controller="Pie" asp-action="List">Back to List</a>
-</div>
 <h2>Your shopping cart</h2>
 <h4>Here are the delicious pies in your shopping cart.</h4>
-<table class="table table-bordered table-striped">
-    <thead>
+<table class="table table-striped table-light table-bordered">
+    <thead class="thead-dark">
         <tr>
             <th>Selected amount</th>
             <th>Pie</th>
@@ -42,3 +39,6 @@
         </tr>
     </tfoot>
 </table>
+<div>
+    <a class="btn btn-primary" asp-controller="Pie" asp-action="List">Back to List</a>
+</div>
