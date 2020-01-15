@@ -77,14 +77,14 @@ footer {
 }
 
 .carousel .item {
-    height: 400px;
+    height: 300px;
 }
 
 .item img {
     position: absolute;
     top: 0;
     left: 0;
-    min-height: 400px;
+    min-height: 300px;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
@@ -97,6 +97,6 @@ footer {
     border-color: #fba1a1 !important;
 }
 
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+.carousel-item {
+    max-height: 300px;
 }
