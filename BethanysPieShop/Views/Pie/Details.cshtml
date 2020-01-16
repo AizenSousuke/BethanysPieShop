@@ -6,28 +6,28 @@
 
 @model Pie
 
-<div>
-    <a class="btn btn-primary" asp-controller="Pie" asp-action="List">Back to List</a>
-</div>
 
-<div class="card container">
-    <div class="thumbnail">
-        <img alt="@Model.Name" src="@Model.ImageUrl" />
-        <h3>
-            <a href="#">@Model.Name</a>
-        </h3>
-        <div class="caption-full">
-            <h3 class="pull-right text-danger">$@Model.Price</h3>
-            <h4>@Model.ShortDescription</h4>
-            <p>@Model.LongDescription</p>
+    <div class="card container p-3">
+        <div class="mb-3">
+            <a class="btn btn-primary" asp-controller="Pie" asp-action="List">Back to List</a>
+        </div>
+        <div class="thumbnail">
+            <img class="rounded" alt="@Model.Name" src="@Model.ImageUrl" />
+            <h3>
+                <a href="#">@Model.Name</a>
+            </h3>
+            <div class="caption-full">
+                <h3 class="pull-right text-danger">$@Model.Price</h3>
+                <h4>@Model.ShortDescription</h4>
+                <p>@Model.LongDescription</p>
+            </div>
+        </div>
+        <div class="addToCart">
+            <p class="button">
+                <a class="btn btn-primary"
+                   asp-controller="ShoppingCart"
+                   asp-action="AddToShoppingCart"
+                   asp-route-pieId="@Model.PieId">Add to cart</a>
+            </p>
         </div>
     </div>
-    <div class="addToCart">
-        <p class="button">
-            <a class="btn btn-primary"
-               asp-controller="ShoppingCart"
-               asp-action="AddToShoppingCart"
-               asp-route-pieId="@Model.PieId">Add to cart</a>
-        </p>
-    </div>
-</div>
