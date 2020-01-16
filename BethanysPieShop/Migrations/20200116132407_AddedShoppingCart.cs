@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BethanysPieShop.Migrations
 {
-    public partial class ShoppingCartAdded : Migration
+    public partial class AddedShoppingCart : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,7 +15,7 @@ namespace BethanysPieShop.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PieId = table.Column<int>(nullable: true),
                     Amount = table.Column<int>(nullable: false),
-                    ShoppingCardId = table.Column<string>(nullable: true)
+                    ShoppingCartId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

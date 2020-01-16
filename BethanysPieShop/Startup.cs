@@ -38,10 +38,13 @@ namespace BethanysPieShop
             */
 
             // Using real db now
+            // Implement the interface and its implementation
             services.AddScoped<IPieRepository, PieRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             // Using shopping cart
             services.AddScoped<ShoppingCart>(serviceProvider => ShoppingCart.GetCart(serviceProvider));
+            // Order implementation
+            services.AddScoped<IOrderRepository, OrderRepository>();
 
             // Add session service
             services.AddHttpContextAccessor();

@@ -5,8 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200114065406_ShoppingCartAdded.cs" />
+    <Compile Remove="Migrations\20200114065406_ShoppingCartAdded.Designer.cs" />
     <Compile Remove="Migrations\20200114070722_ShoppingCartAddedChangedString.cs" />
     <Compile Remove="Migrations\20200114070722_ShoppingCartAddedChangedString.Designer.cs" />
+    <Compile Remove="Migrations\20200116131406_CreatedOrderTable.cs" />
+    <Compile Remove="Migrations\20200116131406_CreatedOrderTable.Designer.cs" />
+    <Compile Remove="Migrations\20200116132237_OrderCreated.cs" />
+    <Compile Remove="Migrations\20200116132237_OrderCreated.Designer.cs" />
+    <Compile Remove="Migrations\20200116133025_Add.cs" />
+    <Compile Remove="Migrations\20200116133025_Add.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
