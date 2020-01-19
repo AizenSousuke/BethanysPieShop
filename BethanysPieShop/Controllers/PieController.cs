@@ -22,15 +22,15 @@ namespace BethanysPieShop.Controllers
             _categoryRepository = categoryRepository;
         }
 
-        public ViewResult List()
-        {
-            PiesListViewModel piesListViewModel = new PiesListViewModel();
-            piesListViewModel.Pies = _pieRepository.AllPies;
+        //public ViewResult List()
+        //{
+        //    PiesListViewModel piesListViewModel = new PiesListViewModel();
+        //    piesListViewModel.Pies = _pieRepository.AllPies;
 
-            piesListViewModel.CurrentCategory = "All Pies";
+        //    piesListViewModel.CurrentCategory = "All Pies";
 
-            return View(piesListViewModel);
-        }
+        //    return View(piesListViewModel);
+        //}
 
         public IActionResult Details(int id)
         {
@@ -42,17 +42,28 @@ namespace BethanysPieShop.Controllers
             return View(pie);
         }
 
-        // GET: /<controller>/
-        /*public IActionResult List()
+        public ViewResult List(string category)
         {
-            //ViewBag.CurrentCategory = "Cheese cakes";
+            IEnumerable<Pie> pies;
+            string currentCategory;
 
-            //return View(_pieRepository.AllPies);
-            PiesListViewModel piesListViewModel = new PiesListViewModel();
-            piesListViewModel.Pies = _pieRepository.AllPies;
+            if (string.IsNullOrEmpty(category))
+            {
+                pies = _pieRepository.AllPies.OrderBy(p => p.PieId);
+                currentCategory = "All pies";
+            }
+            else
+            {
+                pies = _pieRepository.AllPies.Where(p => p.Category.CategoryName == category)
+                    .OrderBy(p => p.PieId);
+                currentCategory = _categoryRepository.AllCategories.FirstOrDefault(c => c.CategoryName == category)?.CategoryName;
+            }
 
-            piesListViewModel.CurrentCategory = "Cheese cakes";
-            return View(piesListViewModel);
-        }*/
+            return View(new PiesListViewModel
+            {
+                Pies = pies,
+                CurrentCategory = currentCategory
+            });
+        }
     }
 }

@@ -100,3 +100,11 @@ footer {
 .carousel-item {
     max-height: 300px;
 }
+
+/*.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.nav-tabs .dropdown-menu, .nav-pills .dropdown-menu, .navbar .dropdown-menu {
+    margin-top: 0;
+}*/    
