@@ -32,12 +32,6 @@ namespace BethanysPieShop
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            /*
-            // register services here 
-            services.AddScoped<IPieRepository, MockPieRepository>();
-            services.AddScoped<ICategoryRepository, MockCategoryRepository>();
-            */
-
             // Using real db now
             // Implement the interface and its implementation
             services.AddScoped<IPieRepository, PieRepository>();
@@ -53,6 +47,14 @@ namespace BethanysPieShop
 
             // Add authentication
             services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<AppDbContext>();
+            // TODO: Fix the validation for this. It doesn't validate correctly. 
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequiredUniqueChars = 0;
+                options.Password.RequireDigit = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequiredLength = 6;
+            });
             services.AddRazorPages();
 
             // register framework services
