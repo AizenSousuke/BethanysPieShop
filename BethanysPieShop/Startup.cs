@@ -6,6 +6,7 @@ using BethanysPieShop.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -50,6 +51,10 @@ namespace BethanysPieShop
             services.AddHttpContextAccessor();
             services.AddSession();
 
+            // Add authentication
+            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<AppDbContext>();
+            services.AddRazorPages();
+
             // register framework services
             services.AddControllersWithViews();
 
@@ -73,6 +78,9 @@ namespace BethanysPieShop
             // Routing
             app.UseRouting();
 
+            // Authentication
+            app.UseAuthentication();
+
             app.UseEndpoints(endpoints =>
             {
                 //endpoints.MapGet("/", async context =>
@@ -83,6 +91,7 @@ namespace BethanysPieShop
                 endpoints.MapControllerRoute(
                     name: "Default",
                     pattern: "{controller=Home}/{action=Index}/{id:int?}");
+                endpoints.MapRazorPages();
             });
         }
     }
