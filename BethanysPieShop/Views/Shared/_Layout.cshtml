@@ -16,25 +16,25 @@
 <body>
     <div class="container">
 
-        <nav class="navbar navbar-dark bg-dark fixed-top" role="navigation">
-            <div class="container">
+        <nav class="navbar-expand navbar-dark bg-dark fixed-top" role="navigation">
+            <div class="">
                 <div class="navbar-header">
                     <button class="navbar-toggler flex-grow-1" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
-                <div>
-                    <a asp-controller="ShoppingCart" asp-action="Index">
-                        <!-- Invoke the View Component -->
-                        @await Component.InvokeAsync("ShoppingCartSummary")
-                    </a>
-                    <partial name="_LoginPartial" />
-                </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li class="p-2"><a asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li class="p-2"><a asp-controller="Pie" asp-action="List">Pies</a></li>
-                        <li class="p-2"><a asp-controller="Contact" asp-action="Index">Contact</a></li>
+                <div class="container">
+                    <ul class="nav navbar-nav justify-content-around">
+                        <li class="p-2"><a class="btn text-white" asp-controller="Home" asp-action="Index"><div class="fas fa-home"></div> Home</a></li>
+                        <li class="p-2"><a class="btn text-white" asp-controller="Pie" asp-action="List">Pies</a></li>
+                        <li class="p-2"><a class="btn text-white" asp-controller="Contact" asp-action="Index">Contact</a></li>
+                        <partial name="_LoginPartial" />
+                        <span class="p-2">
+                            <a class="btn text-white" asp-controller="ShoppingCart" asp-action="Index">
+                                <!-- Invoke the View Component -->
+                                @await Component.InvokeAsync("ShoppingCartSummary")
+                            </a>
+                        </span>
                     </ul>
                 </div>
             </div>

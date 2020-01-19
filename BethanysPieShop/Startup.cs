@@ -80,6 +80,7 @@ namespace BethanysPieShop
 
             // Authentication
             app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
