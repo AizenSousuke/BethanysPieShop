@@ -1,2 +1,13 @@
-﻿<h1 class="alert-success"><i class="fas fa-shopping-cart"></i> @ViewBag.CheckoutCompleteMessage</h1>
-
+﻿<div class="card p-2">
+    <div class="card-title">
+        <div class="fas fa-shopping-cart"></div> Order Complete
+    </div>
+    <h2 class="alert-success card-body p-2">
+         @ViewBag.CheckoutCompleteMessage
+    </h2>
+    <div class="">
+        <a class="btn btn-primary float-right" asp-controller="Home" asp-action="Index">
+            <div class="fas fa-home"></div> Home
+        </a>
+    </div>
+</div>

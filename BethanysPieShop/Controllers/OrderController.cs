@@ -38,6 +38,7 @@ namespace BethanysPieShop.Controllers
                 ModelState.AddModelError("", "Your cart is empty, add some pies first");
             }
 
+            // Check if the model passed in the post request is valid or not
             if (ModelState.IsValid)
             {
                 _orderRepository.CreateOrder(order);
