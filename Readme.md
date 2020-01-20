@@ -4,12 +4,17 @@
 Load solution in VS Code 2019 with ASP.NET Core 3 installed.
 
 ```
-// Open Package Manager and run: *Might need to install the package for sql using 
-dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+// Open Package Manager Console via View Tab and run: 
+Install-Package Microsoft.EntityFrameworkCore.SqlServer
+Install-Package Microsoft.EntityFrameworkCore.Design
+Install-Package Microsoft.AspNet.Razor -Version 3.2.7
+// Update package if there already is one installed
+Update-Package
 ```
 ```
 // then update the database using
-Update-Database <last migration file name>
+Add-Migration Init
+Update-Database
 ```
 
 Press **CTRL + F5** to build and run it on a web browser. Port will be shown in the console.  
@@ -17,6 +22,8 @@ Press **CTRL + F5** to build and run it on a web browser. Port will be shown in 
 ```
 https://localhost:<random_port>
 ```
+
+## **Create a username by registering first!**
 
 ## Images:
 ![image](https://i.imgur.com/X7Gmega.png)
