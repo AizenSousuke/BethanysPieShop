@@ -13,8 +13,18 @@
     <Compile Remove="Migrations\20200116131406_CreatedOrderTable.Designer.cs" />
     <Compile Remove="Migrations\20200116132237_OrderCreated.cs" />
     <Compile Remove="Migrations\20200116132237_OrderCreated.Designer.cs" />
+    <Compile Remove="Migrations\20200116132407_AddedShoppingCart.cs" />
+    <Compile Remove="Migrations\20200116132407_AddedShoppingCart.Designer.cs" />
+    <Compile Remove="Migrations\20200116132726_AddOrder.cs" />
+    <Compile Remove="Migrations\20200116132726_AddOrder.Designer.cs" />
     <Compile Remove="Migrations\20200116133025_Add.cs" />
     <Compile Remove="Migrations\20200116133025_Add.Designer.cs" />
+    <Compile Remove="Migrations\20200119042049_IdentityAdded.cs" />
+    <Compile Remove="Migrations\20200119042049_IdentityAdded.Designer.cs" />
+    <Compile Remove="Migrations\20200122064008_AddedUser.cs" />
+    <Compile Remove="Migrations\20200122064008_AddedUser.Designer.cs" />
+    <Compile Remove="Migrations\20200122064309_NewMigration.cs" />
+    <Compile Remove="Migrations\20200122064309_NewMigration.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
